@@ -1,0 +1,10 @@
+header {
+    /*background-color: black;*/
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0rem 2.5rem 0rem;
+    border-style: dashed;
+    border-color: aqua;
+  }

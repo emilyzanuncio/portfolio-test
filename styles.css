@@ -9,7 +9,6 @@
   src: url("styles/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2");
 }
 
-
 /*------------------- HEADER -------------------*/
 header {
     /*background-color: black;*/
@@ -18,11 +17,11 @@ header {
     flex-wrap:wrap;
     align-items: center;
     padding: 0rem 2.5rem;
-    border-style: dashed;
-    border-color: rgb(236, 236, 236);
+    font-family: Montserrat, monospace, "PT Sans", Tahoma, sans-serif;
+    font-size: 18px;
 }
 
-.logo, .contact {
+.menu-link, .logo, .contact {
   z-index: 2;
 }
 
@@ -30,14 +29,8 @@ header {
   font-family: Azonix, monospace, "PT Sans", Tahoma, sans-serif;
   font-size: 2.5em;
   margin: 25px 0px;
-  padding-left: 119.87px;
+  padding-left: 87px;
 }
-
-.header-text {
-  font-family: Montserrat, monospace, "PT Sans", Tahoma, sans-serif;
-  font-size: 18px;
-}
-
 /*------------------- MENU -------------------*/
 .overlay {
   height: 0%;
@@ -77,13 +70,108 @@ header {
   color: #4181A1;
 }
 
-.overlay .closebtn {
-  position: absolute;
-  top: 37px;
-  left: 43px;
+.closebtn {
   font-size: 18px;
+  text-decoration: none;
+  color: black;
 }
 
 /*------------------- FOOTER -------------------*/
 /*------------------- UNDERLINE HOVER ANIMATION -------------------*/
-/*------------------- BUTTON HOVER ANIMATION -------------------*/
+.underline-hover {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.underline-hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.4s ease-out;
+}
+
+.underline-hover:hover::before {
+  width: 0;
+  right: 0;
+  left: auto;
+}
+/*------------------- CONTACT BUTTON HOVER ANIMATION -------------------*/
+
+.link {
+  display: flex;
+}
+
+/* Hide extra text */
+.mask {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+}
+
+.link-container {
+  transition: transform 0.4s ease;
+}
+
+.title {
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.link-title1 {
+  transform-origin: right center;
+}
+
+.link-title2 {
+  transform-origin: left center;
+  transform: rotate(20deg);
+}
+/* Hover Action*/
+
+/* Move up two texts (20px = font-size) */
+.link:hover .link-container {
+  transform: translateY(-20px);
+}
+
+/* Rotate texts a little bit */
+.link:hover .link-title1 {
+  transform: rotate(20deg);
+}
+
+.link:hover .link-title2 {
+  transform: rotate(0);
+}
+
+/*------------------- MENU CLICK ANIMATION -------------------*/
+.menu-link {
+  display: flex;
+}
+
+/* Hide extra text */
+.menu-mask {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+}
+
+.menu-container {
+  transition: transform 0.4s ease;
+}
+
+.title {
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.menu-title1 {
+  transform-origin: right center;
+}
+
+.menu-title2 {
+  transform-origin: left center;
+  transform: rotate(20deg);
+}

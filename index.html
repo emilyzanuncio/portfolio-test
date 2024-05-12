@@ -6,61 +6,47 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      function openNav() {
-        document.getElementById("navScreen").style.height = "100%";
-      }
-      function closeNav() {
-        document.getElementById("navScreen").style.height = "0%";
-      }
-    </script>
+    <script src="script.js"></script>
   </head>
 
   <body>
     <main>
       <header>
         <div id="navScreen" class="overlay">
-          <a href="javascript:void(0)" class="closebtn header-text" onclick="closeNav()">Close</a>
-
           <div class="menu-content">
-            <div class="menu-link">
-              <a href="#">About Me</a>
-            </div>
-            <div class="menu-link">
-              <a href="#">My Projects</a>
-            </div>
-            <div class="menu-link">
-              <a href="#">My Work</a>
-            </div>
-            <div class="menu-link">
-              <a href="#">My Blog</a>
-            </div>
+            <div class="menu-link"><a href="#">About Me</a></div>
+            <div class="menu-link"><a href="#">My Projects</a></div>
+            <div class="menu-link"><a href="#">My Work</a></div>
+            <div class="menu-link"><a href="#">My Blog</a></div>
           </div>
         </div>
-        <span onclick="openNav()" class="header-text underline-hover">Menu</span>
+        <!--
+          Colocar Menu e close no mesmo div
+          On hover Menu = nothing happens
+          On click Menu = switch to close
+          On hover close = nothing happens
+        -->
+        <div class="menu-link underline-hover">
+          <span class="menu-mask">
+            <div id="link" class="menu-container">
+              <span onclick="openNav()" id="mt1" class="menu-title1 title">Menu</span>
+              <span><a href="javascript:void(0)" id="mt2" class="closebtn menu-title2 title" onclick="closeNav()">Close</a></span>
+            </div>
+          </span>
+        </div>
+        
 
         <h2 class="logo">.EZ</h2>
 
-
-        <div class="contact header-text">
-          <div class="contact-button">
-            <a class="link-component">
-              <div class="contact-text-wrap">
-                <div class="text-size-wrap">
-                  <span class="char">C</span>
-                  <span class="char">o</span>
-                  <span class="char">n</span>
-                  <span class="char">t</span>
-                  <span class="char">a</span>
-                  <span class="char">c</span>
-                  <span class="char">t</span>
-                  <span class="char">M</span>
-                  <span class="char">e</span>
+        <div class="contact underline-hover">
+            <a class="link">
+              <span class="mask">
+                <div class="link-container">
+                  <span class="link-title1 title">Contact Me</span>
+                  <span class="link-title2 title">Contact Me</span>
                 </div>
-              </div>
-              <div class="line-horizontal"></div>
+              </span>
             </a>
-          </div>
         </div>
       </header>
 
@@ -75,3 +61,13 @@
     </main>
   </body>
 </html>
+
+<!--
+
+
+            <div class="contact-text-wrap">
+              <span class="char"><a href="">C</a></span>
+            </div>
+            <div class="line-horizontal"></div>
+
+-->
